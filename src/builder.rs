@@ -9,7 +9,7 @@ pub(crate) struct UrlSet {
     #[serde(rename = "@xlmns")]
     pub xlmns: String,
 
-    pub urls: Vec<Url>,
+    pub url: Vec<Url>,
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -22,7 +22,7 @@ impl UrlSet {
     pub fn new(urls: Vec<String>) -> Self {
         UrlSet {
             xlmns: "http://www.sitemaps.org/schemas/sitemap/0.9".to_string(),
-            urls: urls
+            url: urls
                 .into_iter()
                 .map(|url| Url {
                     loc: url.replace(".md", ".html"),
